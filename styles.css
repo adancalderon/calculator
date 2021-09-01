@@ -11,12 +11,13 @@ h1{
     display: grid;
     grid-template-columns: 105px 105px 105px 105px;
     grid-template-rows: 100px 100px 100px 100px 100px 100px;
+    grid-gap:0px 0px;
     justify-content: space-evenly;
     background-color:grey;
     height:600px;
     width: 450px;
     margin: auto;
-    border: 1px solid black;
+    border: 8px solid black;
     z-index: 1;
 }
 
@@ -24,6 +25,10 @@ button{
     height: 75px;
     width: 75px;
     border:1px solid rgba(0, 0, 0, 0.8);
+    border-radius: 25px ;
+    font-weight: bold;
+    font-family: monospace;
+    font-size: 30px;
 }
 
 button#equall{
@@ -48,12 +53,21 @@ button.operator{
 }
 
 #display{
-    grid-column: 1 / 5;
+    grid-column: 1 / -1;
+    display: flex;
+    font-size: 4.5em;
+    font-weight: initial;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-around;
     height: 75px;
     width: 425px;
     margin: auto;
     margin-top: 5px;
     margin-bottom: 5px;
-    background-color: honeydew;
+    background-color: #b2b9b7;
+    border-style: solid;
+    border-width: 4px;
+    border-radius: 5px;
 }
 
