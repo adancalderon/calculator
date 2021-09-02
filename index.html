@@ -7,35 +7,37 @@
     <title>Calculate</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <div id="pageWrapper">
-        
-        <center>
-        <h1>Calculando Nalas</h1>
-        </center>
+    <body>
+        <div id="pageWrapper">
+            
+            <center>
+            <h1>Calculando Nalas</h1>
+            </center>
 
-        <div id="calcBack">
-            <div id="display">0</div>
-            <button type="button" class="misc">C</button>
-            <button type="button" class="misc">PH</button>
-            <button type="button" class="misc">PH</button>
-            <button type="button" class="operator">/</button>
-            <button type="button" class="operand">7</button>
-            <button type="button" class="operand">8</button>
-            <button type="button" class="operand">9</button>
-            <button type="button" class="operator">X</button>
-            <button type="button" class="operand">4</button>
-            <button type="button" class="operand">5</button>
-            <button type="button" class="operand">6</button>
-            <button type="button" class="operator">-</button>
-            <button type="button" class="operand">1</button>
-            <button type="button" class="operand">2</button>
-            <button type="button" class="operand">3</button>
-            <button type="button" class="operator">+</button>
-            <button type="button" id="zero" class="operand">0</button>
-            <button type="button" id="equall"class="operator">=</button>
+            <div id="calcBack">
+                <div id="display"></div>
+                <button onclick="inputc();" type="button" id="c"class="misc">C</button>
+                <button onclick="inputn();" type="button" id="n"class="misc">N</button>
+                <button onclick="inputmod();" type="button" id="%"class="operator">%</button>
+                <button onclick="inputdiv();" type="button" id="/"class="operator">/</button>
+                <button onclick="input7();" type="button" id="7"class="operand">7</button>
+                <button onclick="input8();" type="button" id="8"class="operand">8</button>
+                <button onclick="input9();" type="button" id="9"class="operand">9</button>
+                <button onclick="inputx();" type="button" id="x"class="operator">X</button>
+                <button onclick="input4();" type="button" id="4"class="operand">4</button>
+                <button onclick="input5();" type="button" id="5"class="operand">5</button>
+                <button onclick="input6();" type="button" id="6"class="operand">6</button>
+                <button onclick="inputmin();" type="button" id="-"class="operator">-</button>
+                <button onclick="input1();" type="button" id="1"class="operand">1</button>
+                <button onclick="input2();" type="button" id="2"class="operand">2</button>
+                <button onclick="input3();" type="button" id="3"class="operand">3</button>
+                <button onclick="inputplus();" type="button" id="+" class="operator">+</button>
+                <button onclick="input0();" type="button" id="zero" class="operand">0</button>
+                <button onclick="operate();"type="button" id="equall"class="operator">=</button>
+            </div>
+
         </div>
+        <script src="script.js"></script>
 
-    </div>
-</body>
+    </body>
 </html>
