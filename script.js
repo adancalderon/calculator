@@ -12,6 +12,10 @@ function multiply(operand1,operand2){
     return operand1 * operand2;
 }
 function divide(operand1, operand2){
+
+    if(operand2 === 0){
+        return "You cannot divide by 0 ERROR";
+    }
     return operand1 / operand2;
 }
 
@@ -19,27 +23,58 @@ function modulo(operand1,operand2){
     return operand1 % operand2;
 }
 
+function getoperand2 (){
+    let dv = document.getElementById('display').innerText;
+    //console.log(dv);
+    let operatorPos = _operatorAt(dv);
+    return operand2 = parseInt(dv.substring(operatorPos+1));
+
+}
+
+function updateDisplay(newDisplay){
+    //console.log(newDisplay);
+    document.getElementById('display').innerText = newDisplay;
+    //console.log(currentDisplay);
+    //console.log(currentDisplay);
+    operand1 = newDisplay;
+    operand2 = null;
+    operator = null;
+}
+
+function equallsTo(){
+ let solution =  operate(operator,operand1,getoperand2());
+ console.log(solution);
+ updateDisplay(solution);
+ //
+}
+
 function operate (operator, operand1, operand2){
 
+   // console.log(operator);
+   // console.log(operand1);
+   // console.log(operand2);
+
     if(operator === '+'){
-        add(operand1,operand2);
+        return add(operand1,operand2);
     }
     else if(operator === '-'){
-        subtract(operand1,operand2);
+        return subtract(operand1,operand2);
     }
     else if(operator === '*'){
-        multiply(operand1,operand2);
+       return multiply(operand1,operand2);
     }
     else if(operator === '/'){
-        divide(operand1,operand2);
+       return divide(operand1,operand2);
     }
     else if(operator === '%'){
-        modulo(operand1,operand2);
+       return modulo(operand1,operand2);
     }
 
     else{
         console.log('error khe berga ')
     }
+
+
 }
 
 
@@ -101,28 +136,36 @@ function input1(){
     //updateDisplay();
     let plus  = '+';
     const display = document.getElementById('display');
-    currentValue = display.innerHTML;
+    operand1 = parseInt(display.innerHTML);
     operator = plus;
     display.innerHTML = display.innerHTML + plus;
  }
  function inputmin(){
     let min  = '-';
     const display = document.getElementById('display');
+    operand1 = parseInt(display.innerHTML);
+    operator = min;
     display.innerHTML = display.innerHTML + min;
  }
  function inputx(){
     let x  = '*';
     const display = document.getElementById('display');
+    operand1 = parseInt(display.innerHTML);
+    operator = x;
     display.innerHTML = display.innerHTML + x;
  }
  function inputdiv(){
     let div  = '/';
     const display = document.getElementById('display');
+    operand1 = parseInt(display.innerHTML);
+    operator = div;
     display.innerHTML = display.innerHTML + div;
  }
  function inputmod(){
     let mod  = '%';
     const display = document.getElementById('display');
+    operand1 = parseInt(display.innerHTML);
+    operator = mod;
     display.innerHTML = display.innerHTML + mod;
  }
 
@@ -130,15 +173,14 @@ function input1(){
      operand1 = null;
      operand2 = null;
      operator = null;
-
-     dv = '';
+     document.getElementById('display').innerText = '';
  }
  
 
  function _operatorAt(dv){
      let found = -1;
      for(let i = 0 ;i<dv.length;i++){
-        if(dv.innerText.charAt(i) === '+' || dv.innerText.charAt(i) === '-' ||dv.innerText.charAt(i) === '*' ||dv.innerText.charAt(i) === '/' ||dv.innerText.charAt(i) === '%'){
+        if(dv.charAt(i) === '+' || dv.charAt(i) === '-' ||dv.charAt(i) === '*' ||dv.charAt(i) === '/' ||dv.charAt(i) === '%'){
             found = i
             break;
         }
@@ -146,13 +188,8 @@ function input1(){
 
      return found;
  }
+ 
+//evaluate each time there is a pair on the run 
 
 
-
- function getoperand2(){
-    if(_operatorAt(dv)){
-        const display = document.getElementById('display');
-        display.innerText = operate(operator,currentValue,operand2);
-    }
- }
 
