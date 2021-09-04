@@ -43,7 +43,7 @@ function updateDisplay(newDisplay){
 
 function equallsTo(){
  let solution =  operate(operator,operand1,getoperand2());
- console.log(solution);
+ //console.log(solution);
  updateDisplay(solution);
  //
 }
@@ -134,20 +134,34 @@ function input1(){
  }
  function inputplus(){
     //updateDisplay();
+    operand2 = getoperand2();
+    if(!(isNaN(operand2))&& operand1 != null){
+       equallsTo();
+    }
+
     let plus  = '+';
-    const display = document.getElementById('display');
+    const display = document.getElementById('display');  //get the first operand 
     operand1 = parseInt(display.innerHTML);
     operator = plus;
     display.innerHTML = display.innerHTML + plus;
  }
  function inputmin(){
+   operand2 = getoperand2();
+   if(!(isNaN(operand2)) && operand1 != null){
+      equallsTo();
+   }
     let min  = '-';
     const display = document.getElementById('display');
     operand1 = parseInt(display.innerHTML);
     operator = min;
     display.innerHTML = display.innerHTML + min;
+   
  }
  function inputx(){
+   operand2 = getoperand2();
+   if(!(isNaN(operand2))&& operand1 != null){
+      equallsTo();
+   }
     let x  = '*';
     const display = document.getElementById('display');
     operand1 = parseInt(display.innerHTML);
@@ -155,6 +169,10 @@ function input1(){
     display.innerHTML = display.innerHTML + x;
  }
  function inputdiv(){
+   operand2 = getoperand2();
+   if(!(isNaN(operand2))&& operand1 != null){
+      equallsTo();
+   }
     let div  = '/';
     const display = document.getElementById('display');
     operand1 = parseInt(display.innerHTML);
@@ -162,6 +180,10 @@ function input1(){
     display.innerHTML = display.innerHTML + div;
  }
  function inputmod(){
+   operand2 = getoperand2();
+   if(!(isNaN(operand2))&& operand1 != null){
+      equallsTo();
+   }
     let mod  = '%';
     const display = document.getElementById('display');
     operand1 = parseInt(display.innerHTML);
