@@ -55,7 +55,7 @@ button.operator{
 #display{
     grid-column: 1 / -1;
     display: flex;
-    font-size: 4.5em;
+    font-size: 3.5em;
     font-weight: initial;
     flex-direction: column;
     align-items: flex-end;
@@ -69,5 +69,6 @@ button.operator{
     border-style: solid;
     border-width: 4px;
     border-radius: 5px;
+    overflow:hidden;
 }
 
