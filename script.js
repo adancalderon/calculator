@@ -14,7 +14,7 @@ function multiply(operand1,operand2){
 function divide(operand1, operand2){
 
     if(operand2 === 0){
-        return "You cannot divide by 0 ERROR";
+        return "ERROR cannot divide by 0";
     }
     return Math.round((operand1 / operand2) * 100) / 100;
 }
@@ -45,13 +45,14 @@ function updateDisplay(newDisplay){
 }
 
 function equallsTo(){
-   console.log(operator);
-   console.log(operand1);
-   console.log(operand2);
+  // console.log(operator);
+   //console.log(operand1);
+   //console.log(operand2);
    operand2 = getoperand2();
     if(operator === null || operand1 == null || operand2 ===null ||operator === undefined || operand1 === undefined || operand2 === undefined){
        return;
     }
+
 
  let solution =  operate(operator,operand1,getoperand2());
  //console.log(solution);
@@ -64,6 +65,14 @@ function operate (operator, operand1, operand2){
    // console.log(operator);
    // console.log(operand1);
    // console.log(operand2);
+
+      if((isNaN(operand1))|| (isNaN(operand2)) || (!isNaN(operator))){
+         inputc();
+         return 'Invalid Format'
+      }
+
+
+
 
     if(operator === '+'){
         return add(operand1,operand2);
