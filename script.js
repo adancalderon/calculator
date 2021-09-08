@@ -14,7 +14,7 @@ function multiply(operand1,operand2){
 function divide(operand1, operand2){
 
     if(operand2 === 0){
-        return "ERROR cannot divide by 0";
+        return "ERROR can't /0";
     }
     return Math.round((operand1 / operand2) * 100) / 100;
 }
