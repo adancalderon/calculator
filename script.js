@@ -3,30 +3,33 @@ let operator;
 let operand2; 
 
 function add(operand1,operand2){
-    return operand1+operand2;
+    return Math.round((operand1+operand2) * 100) / 100;
 }
 function subtract(operand1,operand2){
-    return operand1-operand2;
+    return Math.round((operand1-operand2) * 100 ) / 100;
 }
 function multiply(operand1,operand2){
-    return operand1 * operand2;
+    return Math.round((operand1 * operand2) *100) /100;
 }
 function divide(operand1, operand2){
 
     if(operand2 === 0){
         return "You cannot divide by 0 ERROR";
     }
-    return operand1 / operand2;
+    return Math.round((operand1 / operand2) * 100) / 100;
 }
 
 function modulo(operand1,operand2){
-    return operand1 % operand2;
+    return Math.round((operand1 % operand2) * 100) /100;
 }
 
 function getoperand2 (){
     let dv = document.getElementById('display').innerText;
     //console.log(dv);
     let operatorPos = _operatorAt(dv);
+    if(operatorPos === -1){
+       return operand2 = null; // operator2 was not found 
+    }
     return operand2 = parseInt(dv.substring(operatorPos+1));
 
 }
@@ -42,6 +45,14 @@ function updateDisplay(newDisplay){
 }
 
 function equallsTo(){
+   console.log(operator);
+   console.log(operand1);
+   console.log(operand2);
+   operand2 = getoperand2();
+    if(operator === null || operand1 == null || operand2 ===null ||operator === undefined || operand1 === undefined || operand2 === undefined){
+       return;
+    }
+
  let solution =  operate(operator,operand1,getoperand2());
  //console.log(solution);
  updateDisplay(solution);
@@ -135,7 +146,7 @@ function input1(){
  function inputplus(){
     //updateDisplay();
     operand2 = getoperand2();
-    if(!(isNaN(operand2))&& operand1 != null){
+    if(!(isNaN(operand2))&& operand1 != null && operand2 != null){  // if operand2 
        equallsTo();
     }
 
